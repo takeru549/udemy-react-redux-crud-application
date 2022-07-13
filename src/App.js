@@ -20,19 +20,27 @@ import React from 'react';
 //}
 
 function App() {
+  const profiles = [
+    {name: "Taro",age:10},
+    {name: "Takeru", age:20},
+    {name: "ken"}
+  ]
   return(
   <div>
-    <Dog />
-    <Dog />
-    <Dog />
-    <Dog />
+    {
+      profiles.map((profile, index) => {
+         return  <User name={profile.name} age={profile.age} key={index}/>
+      })
+    }
   </div>
   )
-
+}
+//関数コンポーネント
+const User = (props) => {
+  return <div>Hi Iam {props.name} and {props.age} years old</div>;
 }
 
-//関数コンポーネント
-const Dog = () => {
-  return <div>bowbow</div>;
+User.defaultProps = {
+  age :1
 }
 export default App;
