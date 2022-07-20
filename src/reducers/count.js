@@ -1,7 +1,8 @@
 import {INCREMENT, DECREMENT } from '../actions';
-
+// eslint-disable-next-line
 const initialState = {value: 0};
 
+// eslint-disable-next-line
 export default (state= initialState, action) => {
     switch (action.type) {
 
