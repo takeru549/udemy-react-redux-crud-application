@@ -1,23 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './components/App';
+import EventsIndex from './components/events_index';
 import reportWebVitals from './reportWebVitals';
 
 import {Provider} from 'react-redux';
 import reducer from './reducers';
-import {createStore } from 'redux';
+import {createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 
-
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 document.getElementById('root');
 
 root.render(
   <Provider store= {store}>
-    <App />
+    <EventsIndex />
   </Provider>
 
 );
