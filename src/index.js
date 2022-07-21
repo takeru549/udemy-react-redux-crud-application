@@ -20,14 +20,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 document.getElementById('root');
 
 root.render(
-  <Provider store= {store}>
+  <Provider store= {store}> 
     <BrowserRouter>
-    <Routes>
-      <Route exact path="/events/new" element={<EventsNew/>} />
-      <Route exact path="/" element={<EventsIndex/>} />
-    </Routes>
-       
-      
+      <Routes>
+        <Route exact path="/events/new" element={<EventsNew/>} />
+        <Route exact path="/" element={<EventsIndex/>} />
+      </Routes>
     </BrowserRouter>
   </Provider>
 
